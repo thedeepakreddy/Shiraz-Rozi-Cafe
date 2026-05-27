@@ -809,7 +809,7 @@ export default function App() {
           </div>
 
           <p className="pt-6 border-t border-white/5 text-[10px] text-white/30 font-sans">
-            © 2026 Shiraz Rozi Cafe. Designed with pristine modern layouts.
+            © 2026 Shiraz Rozi Cafe. This App is Designed and Maintained by Deepak Reddy.
           </p>
         </div>
       </footer>
