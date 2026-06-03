@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Patua+One&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Libre Baskerville", Georgia, serif;
+  --font-patua: "Patua One", Georgia, serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --color-primary: #003d2b;
+  --color-primary-dark: #002218;
+  --color-primary-light: #005a40;
+  --color-primary-accent: #006648;
+  --color-gold: #c5a880;
+  --color-gold-hover: #b4956c;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-primary);
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom thin scrollbar for components if needed */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 34, 24, 0.4);
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(197, 168, 128, 0.5);
+  border-radius: 2px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(197, 168, 128, 0.8);
+}
+
+
