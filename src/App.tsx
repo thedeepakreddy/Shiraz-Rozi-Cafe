@@ -415,9 +415,9 @@ export default function App() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 max-w-3xl mx-auto mb-12 text-xs text-white/80 text-center font-sans tracking-wide">
           
           {/* Badge 1: Opening Hours */}
-          <div className="bg-white/5 border border-white/10 rounded-md py-3 px-4 flex items-center justify-center gap-2 shadow-sm select-none">
+          <div className="bg-white/5 border border-white/10 rounded-md py-3 px-4 flex items-center justify-start md:justify-center gap-2 shadow-sm select-none">
             <Clock className="w-4 h-4 text-[#c5a880] shrink-0" />
-            <div className="text-left leading-tight">
+            <div className="text-left leading-tight flex-1">
               <span className="text-[9px] uppercase tracking-wider block opacity-40 font-bold">{translations.openingHours}</span>
               <span className="font-semibold block">{translations.hoursVal}</span>
             </div>
@@ -429,7 +429,7 @@ export default function App() {
             target="_blank"
             rel="noopener noreferrer"
             referrerPolicy="no-referrer"
-            className="bg-white/5 border border-white/15 hover:border-white/30 hover:bg-white/10 rounded-md py-3 px-4 flex items-center justify-center gap-2 shadow-sm hover:shadow-md transition-all group cursor-pointer text-left"
+            className="bg-white/5 border border-white/15 hover:border-white/30 hover:bg-white/10 rounded-md py-3 px-4 flex items-center justify-start md:justify-center gap-2 shadow-sm hover:shadow-md transition-all group cursor-pointer text-left"
           >
             <MapPin className="w-4 h-4 text-[#c5a880] shrink-0" />
             <div className="leading-tight flex-1">
@@ -445,7 +445,7 @@ export default function App() {
             target="_blank"
             rel="noopener noreferrer"
             referrerPolicy="no-referrer"
-            className="bg-[#c5a880]/10 border border-[#c5a880]/20 hover:border-[#c5a880]/50 hover:bg-[#c5a880]/15 rounded-md py-3 px-4 flex items-center justify-center gap-2 shadow-sm hover:shadow-md transition-all group cursor-pointer text-left"
+            className="bg-[#c5a880]/10 border border-[#c5a880]/20 hover:border-[#c5a880]/50 hover:bg-[#c5a880]/15 rounded-md py-3 px-4 flex items-center justify-start md:justify-center gap-2 shadow-sm hover:shadow-md transition-all group cursor-pointer text-left"
           >
             <Sparkles className="w-4 h-4 text-[#c5a880] shrink-0" />
             <div className="leading-tight flex-1">
@@ -698,29 +698,29 @@ export default function App() {
 
                           {/* Action panel */}
                           <div className="flex items-center justify-between pt-3 border-t border-white/10 mt-auto">
-                            
-                            {/* Like heart & Detail indicator */}
-                            <div className="flex items-center gap-1">
-                              <button 
-                                onClick={(e) => toggleLike(e, item.id)}
-                                className={`p-1.5 rounded-md transition-transform hover:scale-110 active:scale-95 cursor-pointer ${isLiked ? 'text-red-500' : 'text-gray-400 hover:text-white'}`}
-                              >
-                                <Heart className={`w-3.5 h-3.5 ${isLiked ? 'fill-current' : ''}`} />
-                              </button>
-                              <span className="text-[10px] text-white/40 font-medium group-hover:text-[#c5a880] flex items-center gap-0.5 ml-1 select-none font-sans">
-                                View details <ChevronRight className="w-3" />
-                              </span>
-                            </div>
+                              
+                              {/* Like heart & Detail indicator */}
+                              <div className="flex items-center gap-1">
+                                <button 
+                                  onClick={(e) => toggleLike(e, item.id)}
+                                  className={`p-1.5 rounded-md transition-transform hover:scale-110 active:scale-95 cursor-pointer ${isLiked ? 'text-red-500' : 'text-gray-400 hover:text-white'}`}
+                                >
+                                  <Heart className={`w-3.5 h-3.5 ${isLiked ? 'fill-current' : ''}`} />
+                                </button>
+                                <span className="text-[10px] text-white/40 font-medium group-hover:text-[#c5a880] flex items-center gap-0.5 ml-1 select-none font-sans">
+                                  View details <ChevronRight className="w-3" />
+                                </span>
+                              </div>
 
-                            {/* Easy add-to-tray plus tab */}
-                            <button 
-                              onClick={(e) => { e.stopPropagation(); addToTray(item); }}
-                              className="bg-white/10 group-hover:bg-white text-white group-hover:text-[#002218] p-1.5 rounded-md shadow-sm group-hover:shadow transition-all border border-white/10 group-hover:border-white cursor-pointer"
-                              title="Add"
-                            >
-                              <Plus className="w-4 h-4" />
-                            </button>
-                          </div>
+                              {/* Easy add-to-tray plus tab */}
+                              <button 
+                                onClick={(e) => { e.stopPropagation(); addToTray(item); }}
+                                className="bg-white/10 group-hover:bg-white text-white group-hover:text-[#002218] p-1.5 rounded-md shadow-sm group-hover:shadow transition-all border border-white/10 group-hover:border-white cursor-pointer"
+                                title="Add"
+                              >
+                                <Plus className="w-4 h-4" />
+                              </button>
+                            </div>
                         </div>
                       );
                     })}
