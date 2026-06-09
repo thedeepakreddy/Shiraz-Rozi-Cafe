@@ -115,7 +115,7 @@ export const menuData: MenuData = {
             "hu": "Chilis Eszpresszó",
             "de": "Chili Espresso"
           },
-          "price": 899,
+          "price": 999,
           "tags": [
             "Hot",
             "Spicy"
@@ -359,6 +359,20 @@ export const menuData: MenuData = {
             "en": "Cold espresso and milk over ice with smooth sweet caramel and vanilla.",
             "hu": "Hideg espresso és tej jégen, finom édes karamellel és vaníliával.",
             "de": "Kalter Espresso und Milch auf Eis mit sanftem süßem Karamell und Vanille."
+          }
+        },
+        {
+          "id": "Iced_Americano",
+          "name": {
+            "en": "Iced Americano",
+            "hu": "Jeges Americano",
+            "de": "Eis Americano"
+          },
+          "price": 1199,
+          "description": {
+            "en": "A classic Americano, poured over ice for a refreshing chill.",
+            "hu": "Klasszikus Americano jéggel, frissítően hidegen.",
+            "de": "Ein klassischer Americano, auf Eis gegossen für eine erfrischende Abkühlung."
           }
         }
       ]
