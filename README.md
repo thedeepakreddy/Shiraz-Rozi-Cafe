@@ -1,23 +1,23 @@
-# 🍵 Shiraz Rozi Cafe Menu
+#  Shiraz Rozi Cafe Menu
 
 An elegant, modern, and highly interactive multilingual digital menu built for **Shiraz Rozi Cafe**. Designed with a deep, rich emerald green visual theme (`#003d2b`), featuring fluid entrance animations, and built fully with TypeScript, React, and Tailwind CSS.
 
 ---
 
-## ✨ Features
+##  Features
 
-- **💚 Deep Emerald Premium Design**: A meticulously curated brand-focused interface featuring elegant typography, balanced negative space, and vibrant food status tags styled specifically for Shiraz Rozi Cafe.
-- **🌐 Multilingual Support (3 Languages)**: Seamlessly switch menu items, titles, and descriptions dynamically between:
+- ** Deep Emerald Premium Design**: A meticulously curated brand-focused interface featuring elegant typography, balanced negative space, and vibrant food status tags styled specifically for Shiraz Rozi Cafe.
+- ** Multilingual Support (3 Languages)**: Seamlessly switch menu items, titles, and descriptions dynamically between:
   - English (`en`)
   - Hungarian (`hu`)
   - German (`de`)
-- **🔍 Smart Search & Categorized Filtering**: Quick lookup system to filter and find coffees, tea, desserts, and savory treats in real-time.
-- **🛒 Dynamic Tray & Quick Select**: Allows guests to bookmark items, adjust quantities, and preview their selections directly in an interactive tray drawer.
-- **✨ Fluid Micro-Animations**: Smooth, responsive spring animations and micro-transitions driven by `motion` for an incredibly premium user experience.
+- ** Smart Search & Categorized Filtering**: Quick lookup system to filter and find coffees, tea, desserts, and savory treats in real-time.
+- ** Dynamic Tray & Quick Select**: Allows guests to bookmark items, adjust quantities, and preview their selections directly in an interactive tray drawer.
+- ** Fluid Micro-Animations**: Smooth, responsive spring animations and micro-transitions driven by `motion` for an incredibly premium user experience.
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```bash
 ├── src/
@@ -35,7 +35,7 @@ An elegant, modern, and highly interactive multilingual digital menu built for *
 
 ---
 
-## 🛠️ Installation & Local Development
+## Installation & Local Development
 
 To run the project on your local machine:
 
@@ -63,7 +63,7 @@ To run the project on your local machine:
 
 ---
 
-## 🚀 Deployment Guide
+##  Deployment Guide
 
 ### Option 1: Deploy to Vercel (Recommended)
 Since the `vercel.json` file is already in your repository, Vercel will auto-detect Vite and set up clean URL rewrites:
