@@ -276,30 +276,9 @@ export default function App() {
     return tray.reduce((sum, item) => sum + item.quantity, 0);
   }, [tray]);
 
-  // Category Icon Resolver
-  const getCategoryIcon = (catId: string) => {
-    switch (catId.toLowerCase()) {
-      case 'coffee':
-        return <Coffee className="w-4 h-4" />;
-      case 'arabic coffee':
-        return <span className="text-sm font-semibold"></span>;
-      case 'chocolate':
-        return <span className="text-sm font-semibold"></span>;
-      case 'tea':
-        return <span className="text-sm font-semibold"></span>;
-      case 'matcha':
-        return <span className="text-sm font-semibold"></span>;
-      case 'lemonade':
-        return <span className="text-sm font-semibold"></span>;
-      case 'shakes':
-        return <span className="text-sm font-semibold"></span>;
-      default:
-        return <Sparkles className="w-3.5 h-3.5" />;
-    }
-  };
-
   return (
-    <div id="cafe-menu-app" className="min-h-screen bg-[#003d2b] text-white flex flex-col selection:bg-amber-100 selection:text-[#003d2b] relative overflow-x-hidden border-8 md:border-12 border-[#002218]">
+    <>
+      <div id="cafe-menu-app" className="print:hidden min-h-screen bg-[#003d2b] text-white flex flex-col selection:bg-amber-100 selection:text-[#003d2b] relative overflow-x-hidden border-8 md:border-12 border-[#002218]">
       
       {/* Dynamic Toast System */}
       <AnimatePresence>
@@ -320,7 +299,7 @@ export default function App() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-gradient-to-b from-[#005a40]/30 to-transparent blur-3xl rounded-full pointer-events-none" />
 
       {/* Dynamic quick navigation utilities */}
-      <nav className="w-full bg-[#002218]/90 backdrop-blur-md border-b border-white/10 sticky top-0 z-[150] shadow-xl transition-all select-none">
+      <nav className="w-full bg-[#002218]/90 backdrop-blur-md border-b border-white/10 sticky top-0 z-[150] shadow-xl transition-all select-none print-hidden">
         <div className="max-w-5xl mx-auto px-4 py-2.5 flex items-center justify-between relative min-h-[52px]">
           
           {/* Left branding */}
@@ -357,6 +336,24 @@ export default function App() {
 
           {/* Right side info & tray controls */}
           <div className="flex items-center gap-2 ml-auto md:ml-0">
+            {/* Download PDF Button */}
+            <button 
+              onClick={async () => {
+                const { generateMenuPdf } = await import('./utils/pdfGenerator');
+                try {
+                  generateMenuPdf();
+                } catch (e) {
+                  console.error('Failed to generate PDF', e);
+                  alert("Export failed. You may need to retry.");
+                }
+              }}
+              className="px-3 py-1.5 text-white/80 hover:text-white hover:bg-white/5 border border-white/10 hover:border-white/30 rounded-full transition-all cursor-pointer flex items-center gap-1.5 hidden sm:flex"
+              title="Download Menu"
+            >
+              <Printer className="w-3.5 h-3.5" />
+              <span className="text-[10px] uppercase font-bold tracking-wider">PDF</span>
+            </button>
+
             {/* Highly Visible Sticky Top Tray button */}
             <button 
               onClick={() => setIsTrayOpen(true)}
@@ -412,7 +409,7 @@ export default function App() {
         </div>
 
         {/* COMPACT FLOATING ADDRESS & ACTIONS BAR */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 max-w-3xl mx-auto mb-12 text-xs text-white/80 text-center font-sans tracking-wide">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 max-w-3xl mx-auto mb-12 text-xs text-white/80 text-center font-sans tracking-wide print-hidden">
           
           {/* Badge 1: Opening Hours */}
           <div className="bg-white/5 border border-white/10 rounded-md py-3 px-4 flex items-center justify-start md:justify-center gap-2 shadow-sm select-none">
@@ -517,7 +514,7 @@ export default function App() {
         )}
 
         {/* MAIN CONTROLS BAR: SEARCH & VIEW MODES */}
-        <section className="bg-[#002218]/40 rounded-md p-4 mb-8 border border-white/10 shadow-xl flex flex-col md:flex-row gap-4 items-center justify-between">
+        <section className="bg-[#002218]/40 rounded-md p-4 mb-8 border border-white/10 shadow-xl flex flex-col md:flex-row gap-4 items-center justify-between print-hidden">
           
           {/* Search Box */}
           <div className="relative w-full md:w-80">
@@ -581,13 +578,12 @@ export default function App() {
         </section>
 
         {/* CATEGORY SELECTOR SLIDECAP (Beautiful Horizontal Scroller) */}
-        <div className="mb-8 select-none">
+        <div className="mb-8 select-none print-hidden">
           <div className="flex items-center overflow-x-auto gap-2 py-2 pr-4 custom-scrollbar scroll-smooth">
             <button
               onClick={() => setActiveCategory('all')}
-              className={`px-4 py-2.5 rounded-md text-[10px] tracking-wider uppercase font-bold shrink-0 transition-all border flex items-center gap-1.5 cursor-pointer ${activeCategory === 'all' ? 'bg-white text-[#003d2b] border-white shadow-md font-extrabold' : 'bg-[#002218]/60 hover:bg-[#002218] border-white/10 text-white/85'}`}
+              className={`px-4 py-2.5 rounded-md text-[10px] tracking-wider uppercase font-bold shrink-0 transition-all border flex items-center cursor-pointer ${activeCategory === 'all' ? 'bg-white text-[#003d2b] border-white shadow-md font-extrabold' : 'bg-[#002218]/60 hover:bg-[#002218] border-white/10 text-white/85'}`}
             >
-              <Sparkles className="w-3.5 h-3.5" />
               <span>{translations.allCategories}</span>
             </button>
             
@@ -598,9 +594,8 @@ export default function App() {
                 <button
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
-                  className={`px-4 py-2.5 rounded-md text-[10px] tracking-wider uppercase font-bold shrink-0 transition-all border flex items-center gap-1.5 cursor-pointer ${isActive ? 'bg-white text-[#003d2b] border-white shadow-md font-extrabold' : 'bg-[#002218]/60 hover:bg-[#002218] border-white/10 text-white/85'}`}
+                  className={`px-4 py-2.5 rounded-md text-[10px] tracking-wider uppercase font-bold shrink-0 transition-all border flex items-center cursor-pointer ${isActive ? 'bg-white text-[#003d2b] border-white shadow-md font-extrabold' : 'bg-[#002218]/60 hover:bg-[#002218] border-white/10 text-white/85'}`}
                 >
-                  {getCategoryIcon(category.id)}
                   <span>{title}</span>
                 </button>
               );
@@ -664,7 +659,7 @@ export default function App() {
                         <div 
                           key={item.id}
                           onClick={() => setSelectedItem(item)}
-                          className="group bg-white/5 hover:bg-white/10 text-left rounded-md p-4.5 border border-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer flex flex-col justify-between hover:shadow-lg relative"
+                          className="group bg-white/5 hover:bg-white/10 text-left rounded-md p-4.5 border border-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer flex flex-col justify-between hover:shadow-lg relative print-page-break"
                         >
                           {/* Top row */}
                           <div>
@@ -697,7 +692,7 @@ export default function App() {
                           </div>
 
                           {/* Action panel */}
-                          <div className="flex items-center justify-between pt-3 border-t border-white/10 mt-auto">
+                          <div className="flex items-center justify-between pt-3 border-t border-white/10 mt-auto print-hidden">
                               
                               {/* Like heart & Detail indicator */}
                               <div className="flex items-center gap-1">
@@ -737,7 +732,7 @@ export default function App() {
                       return (
                         <div 
                           key={item.id}
-                          className="group border-b border-dashed border-white/10 last:border-0 pb-4 last:pb-0 font-sans cursor-pointer"
+                          className="group border-b border-dashed border-white/10 last:border-0 pb-4 last:pb-0 font-sans cursor-pointer print-page-break"
                           onClick={() => setSelectedItem(item)}
                         >
                           <div className="flex items-baseline justify-between gap-4">
@@ -759,7 +754,7 @@ export default function App() {
                               </span>
                               
                               {/* Compact actions for List view */}
-                              <div className="opacity-70 group-hover:opacity-100 flex items-center gap-1 transition-all">
+                              <div className="opacity-70 group-hover:opacity-100 flex items-center gap-1 transition-all print-hidden">
                                 <button 
                                   onClick={(e) => { e.stopPropagation(); addToTray(item); }}
                                   className="p-1 text-white hover:text-[#c5a880] transition-all cursor-pointer"
@@ -1285,7 +1280,7 @@ export default function App() {
             initial={{ y: 80, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 80, opacity: 0 }}
-            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[140] w-full max-w-sm px-4"
+            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[140] w-full max-w-sm px-4 print-hidden"
           >
             <button 
               onClick={() => setIsTrayOpen(true)}
@@ -1510,6 +1505,12 @@ export default function App() {
         )}
       </AnimatePresence>
 
-    </div>
+      </div>
+
+      {/* Hidden Print Layout (HTML version removed in favor of PDF export) */}
+      <div id="print-wrapper" className="hidden">
+      </div>
+
+    </>
   );
 }
