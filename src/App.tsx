@@ -21,6 +21,7 @@ import {
   QrCode
 } from 'lucide-react';
 import { menuData } from './data';
+import SplashScreen from './SplashScreen';
 import { MenuCategory, MenuItem, SupportedLanguage } from './types';
 
 // Translation records
@@ -131,6 +132,7 @@ export default function App() {
   });
 
   const [searchQuery, setSearchQuery] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);
   const [viewMode, setViewMode] = useState<'grid' | 'compact'>('grid');
@@ -277,6 +279,9 @@ export default function App() {
 
   return (
     <>
+      <AnimatePresence>
+        {isLoading && <SplashScreen key="splash" onComplete={() => setIsLoading(false)} />}
+      </AnimatePresence>
       <div id="cafe-menu-app" className="print:hidden min-h-screen bg-[#003d2b] text-white flex flex-col selection:bg-amber-100 selection:text-[#003d2b] relative overflow-x-hidden border-8 md:border-12 border-[#002218]">
       
       {/* Dynamic Toast System */}
