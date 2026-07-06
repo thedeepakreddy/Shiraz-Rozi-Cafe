@@ -18,8 +18,7 @@ import {
   Check, 
   Info,
   ExternalLink,
-  QrCode,
-  Printer
+  QrCode
 } from 'lucide-react';
 import { menuData } from './data';
 import { MenuCategory, MenuItem, SupportedLanguage } from './types';
@@ -336,24 +335,6 @@ export default function App() {
 
           {/* Right side info & tray controls */}
           <div className="flex items-center gap-2 ml-auto md:ml-0">
-            {/* Download PDF Button */}
-            <button 
-              onClick={async () => {
-                const { generateMenuPdf } = await import('./utils/pdfGenerator');
-                try {
-                  generateMenuPdf();
-                } catch (e) {
-                  console.error('Failed to generate PDF', e);
-                  alert("Export failed. You may need to retry.");
-                }
-              }}
-              className="px-3 py-1.5 text-white/80 hover:text-white hover:bg-white/5 border border-white/10 hover:border-white/30 rounded-full transition-all cursor-pointer flex items-center gap-1.5 hidden sm:flex"
-              title="Download Menu"
-            >
-              <Printer className="w-3.5 h-3.5" />
-              <span className="text-[10px] uppercase font-bold tracking-wider">PDF</span>
-            </button>
-
             {/* Highly Visible Sticky Top Tray button */}
             <button 
               onClick={() => setIsTrayOpen(true)}
