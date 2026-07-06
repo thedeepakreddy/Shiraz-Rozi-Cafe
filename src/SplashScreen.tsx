@@ -19,25 +19,17 @@ export default function SplashScreen({ onComplete }: { onComplete: () => void })
       <div className="absolute inset-0 w-full h-full flex items-center justify-center">
         {/* 
           This video tag will play the actual video file you uploaded.
-          Please upload your video file to the 'public' folder and name it 'loading-animation.mp4'.
+          Please upload your video file to the 'public' folder and name it 'loading-animation.mov'.
         */}
         <video 
           autoPlay 
           muted 
           playsInline
           className="w-full h-full object-cover"
-          src="/loading-animation.mp4"
+          src="/loading-animation.mov"
         />
       </div>
 
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-16 text-[#FDE68A]/90 font-serif font-medium tracking-[0.15em] text-sm"
-      >
-        Loading Online Menu...
-      </motion.div>
     </motion.div>
   );
 }
