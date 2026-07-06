@@ -1067,6 +1067,215 @@ export const menuData: MenuData = {
           }
         }
       ]
+    },
+    {
+      "id": "Drinks",
+      "name": {
+        "en": "Drinks",
+        "hu": "Italok",
+        "de": "Getränke"
+      },
+      "items": [
+        {
+          "id": "Coca_cola",
+          "name": {
+            "en": "Coca Cola",
+            "hu": "Coca Cola",
+            "de": "Coca Cola"
+          },
+          "price": 790
+        },
+        {
+          "id": "Water",
+          "name": {
+            "en": "Water",
+            "hu": "Víz",
+            "de": "Wasser"
+          },
+          "price": 490
+        },
+        {
+          "id": "Soproni_Meggy",
+          "name": {
+            "en": "Soproni Meggy (Can) 0.50 L 4%",
+            "hu": "Soproni Meggy (Doboz) 0.50 L 4%",
+            "de": "Soproni Meggy (Dose) 0.50 L 4%"
+          },
+          "price": 1200
+        },
+        {
+          "id": "Soproni_Lager",
+          "name": {
+            "en": "Soproni Lager (Bottle) 0.33 L 4.5%",
+            "hu": "Soproni Lager (Üveg) 0.33 L 4.5%",
+            "de": "Soproni Lager (Flasche) 0.33 L 4.5%"
+          },
+          "price": 1100
+        },
+        {
+          "id": "Gosser_Zitrone",
+          "name": {
+            "en": "Gösser Natur Zitrone (Bottle) 0.33 L 0.0%",
+            "hu": "Gösser Natur Zitrone (Üveg) 0.33 L 0.0%",
+            "de": "Gösser Natur Zitrone (Flasche) 0.33 L 0.0%"
+          },
+          "price": 1100
+        },
+        {
+          "id": "Heineken_0_0",
+          "name": {
+            "en": "Heineken 0.0% (Bottle) 0.33 L 0.0%",
+            "hu": "Heineken 0.0% (Üveg) 0.33 L 0.0%",
+            "de": "Heineken 0.0% (Flasche) 0.33 L 0.0%"
+          },
+          "price": 1100
+        },
+        {
+          "id": "Heineken_Original",
+          "name": {
+            "en": "Heineken Original (Bottle) 0.33 L 5%",
+            "hu": "Heineken Original (Üveg) 0.33 L 5%",
+            "de": "Heineken Original (Flasche) 0.33 L 5%"
+          },
+          "price": 1100
+        }
+      ]
+    },
+    {
+      "id": "Pastries_Snacks",
+      "name": {
+        "en": "Pastries & Snacks",
+        "hu": "Sütemények és Snackek",
+        "de": "Gebäck & Snacks"
+      },
+      "items": [
+        {
+          "id": "Chocolate_Pockets_1",
+          "name": {
+            "en": "Freshly Baked Chocolate Pockets (1 pc)",
+            "hu": "Frissen Sült Csokis Párna (1 db)",
+            "de": "Frisch gebackene Schokoladentasche (1 Stk.)"
+          },
+          "price": 399
+        },
+        {
+          "id": "Chocolate_Pockets_2",
+          "name": {
+            "en": "Freshly Baked Chocolate Pockets (2 pcs)",
+            "hu": "Frissen Sült Csokis Párna (2 db)",
+            "de": "Frisch gebackene Schokoladentaschen (2 Stk.)"
+          },
+          "price": 750
+        },
+        {
+          "id": "Chocolate_Pockets_6",
+          "name": {
+            "en": "Freshly Baked Chocolate Pockets (6 pcs)",
+            "hu": "Frissen Sült Csokis Párna (6 db)",
+            "de": "Frisch gebackene Schokoladentaschen (6 Stk.)"
+          },
+          "price": 2000
+        },
+        {
+          "id": "Hot_Chocolate_Souffle",
+          "name": {
+            "en": "Hot Chocolate Soufflé",
+            "hu": "Forró Csokoládé Szufflé",
+            "de": "Heißes Schokoladensoufflé"
+          },
+          "price": 2199
+        },
+        {
+          "id": "Chocolate_Souffle_Vanilla",
+          "name": {
+            "en": "Chocolate Soufflé with Vanilla Ice Cream",
+            "hu": "Csokoládé Szufflé Vanília Fagylalttal",
+            "de": "Schokoladensoufflé mit Vanilleeis"
+          },
+          "price": 2790
+        },
+        {
+          "id": "Sacher_Torte",
+          "name": {
+            "en": "Sacher Torte",
+            "hu": "Sacher Torta",
+            "de": "Sachertorte"
+          },
+          "price": 2490
+        },
+        {
+          "id": "Sacher_Torte_Cream",
+          "name": {
+            "en": "Sacher Torte with Whipped Cream",
+            "hu": "Sacher Torta Tejszínhabbal",
+            "de": "Sachertorte mit Schlagsahne"
+          },
+          "price": 2690
+        },
+        {
+          "id": "Chocolate_Croissant",
+          "name": {
+            "en": "Chocolate Croissant",
+            "hu": "Csokoládés Croissant",
+            "de": "Schokoladencroissant"
+          },
+          "price": 990
+        },
+        {
+          "id": "Chocolate_Croissant_Coffee",
+          "name": {
+            "en": "Chocolate Croissant with Coffee",
+            "hu": "Csokoládés Croissant Kávéval",
+            "de": "Schokoladencroissant mit Kaffee"
+          },
+          "price": 1190
+        },
+        {
+          "id": "New_York_Cheesecake",
+          "name": {
+            "en": "New York Cheesecake",
+            "hu": "New York Sajttorta",
+            "de": "New York Käsekuchen"
+          },
+          "price": 900
+        },
+        {
+          "id": "Baklava",
+          "name": {
+            "en": "Baklava",
+            "hu": "Baklava",
+            "de": "Baklava"
+          },
+          "price": 899
+        },
+        {
+          "id": "Roll",
+          "name": {
+            "en": "Roll",
+            "hu": "Péksütemény / Tekercs",
+            "de": "Brötchen / Rolle"
+          },
+          "price": 850
+        },
+        {
+          "id": "Sandwich_Turkey_Pork",
+          "name": {
+            "en": "Sandwich (Turkey / Pork)",
+            "hu": "Szendvics (Pulyka / Sertés)",
+            "de": "Sandwich (Pute / Schweinefleisch)"
+          },
+          "price": 2390
+        },
+        {
+          "id": "Toast_Turkey_Pig",
+          "name": {
+            "en": "Toast (Turkey / Pork)",
+            "hu": "Melegszendvics (Pulyka / Sertés)",
+            "de": "Toast (Pute / Schweinefleisch)"
+          },
+          "price": 2190
+        }
+      ]
     }
   ]
 };
