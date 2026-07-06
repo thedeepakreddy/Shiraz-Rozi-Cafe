@@ -282,17 +282,17 @@ export default function App() {
       case 'coffee':
         return <Coffee className="w-4 h-4" />;
       case 'arabic coffee':
-        return <span className="text-sm font-semibold">☕</span>;
+        return <span className="text-sm font-semibold"></span>;
       case 'chocolate':
-        return <span className="text-sm font-semibold">🍫</span>;
+        return <span className="text-sm font-semibold"></span>;
       case 'tea':
-        return <span className="text-sm font-semibold">🍵</span>;
+        return <span className="text-sm font-semibold"></span>;
       case 'matcha':
-        return <span className="text-sm font-semibold">🌿</span>;
+        return <span className="text-sm font-semibold"></span>;
       case 'lemonade':
-        return <span className="text-sm font-semibold">🍋</span>;
+        return <span className="text-sm font-semibold"></span>;
       case 'shakes':
-        return <span className="text-sm font-semibold">🥤</span>;
+        return <span className="text-sm font-semibold"></span>;
       default:
         return <Sparkles className="w-3.5 h-3.5" />;
     }
