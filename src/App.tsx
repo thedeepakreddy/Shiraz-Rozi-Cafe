@@ -791,7 +791,7 @@ export default function App() {
           </div>
 
           <p className="pt-6 border-t border-white/5 text-[10px] text-white/30 font-sans">
-            © 2026 Shiraz Rozi Cafe. Designed and maintained by Deepak Reddy
+            © 2026 Shiraz Rozi Cafe. Designed and maintained by <a href="https://github.com/thedeepakreddy" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Deepak Reddy</a>
           </p>
         </div>
       </footer>
