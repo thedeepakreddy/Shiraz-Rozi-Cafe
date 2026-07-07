@@ -1,9 +1,27 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
 
 export default function SplashScreen({ onComplete }: { onComplete: () => void }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
   useEffect(() => {
-    // We wait for 4.5 seconds or you can adjust this to match the exact video duration
+    if (videoRef.current) {
+      const video = videoRef.current;
+      video.muted = true;
+      video.defaultMuted = true;
+      video.setAttribute('muted', '');
+      video.setAttribute('playsinline', '');
+      
+      // Explicitly call play to handle strict mobile autoplay policies
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch((e) => console.warn("Video autoplay prevented:", e));
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    // We wait for 9 seconds or you can adjust this to match the exact video duration
     const timer = setTimeout(() => {
       onComplete();
     }, 9000);
@@ -16,22 +34,11 @@ export default function SplashScreen({ onComplete }: { onComplete: () => void })
       exit={{ opacity: 0, scale: 1.1, filter: "blur(10px)" }}
       transition={{ duration: 0.8, ease: "easeInOut" }}
     >
-      <div className="absolute inset-0 w-full h-[100dvh] flex items-center justify-center">
-        {/* 
-          This video tag will play the actual video file you uploaded.
-          Please upload your video file to the 'public' folder and name it 'loading-animation.mp4'.
-        */}
-        <video 
-          ref={(el) => {
-            if (el) {
-              el.defaultMuted = true;
-              el.muted = true;
-              // Attempt to play explicitly to handle mobile autoplay restrictions
-              el.play().catch((e) => console.warn("Video autoplay prevented:", e));
-            }
-          }}
-          autoPlay 
-          muted 
+      <div className="absolute inset-0 w-full h-[100dvh] flex items-center justify-center bg-[#123626]">
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
           playsInline
           preload="auto"
           className="w-full h-full object-cover"
