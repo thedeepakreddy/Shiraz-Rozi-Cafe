@@ -26,7 +26,7 @@ export default function SplashScreen({ onComplete }: { onComplete: () => void })
           muted 
           playsInline
           className="w-full h-full object-cover"
-          src="/loading-animation.webm"
+          src="/loading-animation.mp4"
         />
       </div>
 
