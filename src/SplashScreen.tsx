@@ -22,6 +22,14 @@ export default function SplashScreen({ onComplete }: { onComplete: () => void })
           Please upload your video file to the 'public' folder and name it 'loading-animation.mp4'.
         */}
         <video 
+          ref={(el) => {
+            if (el) {
+              el.defaultMuted = true;
+              el.muted = true;
+              // Attempt to play explicitly to handle mobile autoplay restrictions
+              el.play().catch((e) => console.warn("Video autoplay prevented:", e));
+            }
+          }}
           autoPlay 
           muted 
           playsInline
