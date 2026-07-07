@@ -25,7 +25,7 @@ export default function SplashScreen({ onComplete }: { onComplete: () => void })
           autoPlay 
           muted 
           playsInline
-          className="w-full h-full object-cover md:object-contain lg:object-cover"
+          className="w-full h-full object-cover"
           src="/loading-animation.mp4"
         />
       </div>
