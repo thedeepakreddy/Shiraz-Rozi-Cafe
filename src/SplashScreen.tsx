@@ -19,14 +19,14 @@ export default function SplashScreen({ onComplete }: { onComplete: () => void })
       <div className="absolute inset-0 w-full h-full flex items-center justify-center">
         {/* 
           This video tag will play the actual video file you uploaded.
-          Please upload your video file to the 'public' folder and name it 'loading-animation.mov'.
+          Please upload your video file to the 'public' folder and name it 'loading-animation.webm'.
         */}
         <video 
           autoPlay 
           muted 
           playsInline
           className="w-full h-full object-cover"
-          src="/loading-animation.mov"
+          src="/loading-animation.webm"
         />
       </div>
 
