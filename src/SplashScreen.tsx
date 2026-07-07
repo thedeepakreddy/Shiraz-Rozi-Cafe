@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
+import { loadingVideoBase64 } from './loadingVideo';
 
 export default function SplashScreen({ onComplete }: { onComplete: () => void }) {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -43,7 +44,7 @@ export default function SplashScreen({ onComplete }: { onComplete: () => void })
           preload="auto"
           className="w-full h-full object-cover"
         >
-          <source src="/loading-animation.mp4" type="video/mp4" />
+          <source src={loadingVideoBase64} type="video/mp4" />
         </video>
       </div>
 
