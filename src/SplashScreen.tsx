@@ -21,10 +21,10 @@ export default function SplashScreen({ onComplete }: { onComplete: () => void })
   }, []);
 
   useEffect(() => {
-    // We wait for 9 seconds or you can adjust this to match the exact video duration
+    // We wait for 10 seconds or you can adjust this to match the exact video duration
     const timer = setTimeout(() => {
       onComplete();
-    }, 9000);
+    }, 10000);
     return () => clearTimeout(timer);
   }, [onComplete]);
 
