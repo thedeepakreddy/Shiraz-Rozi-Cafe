@@ -16,7 +16,7 @@ export default function SplashScreen({ onComplete }: { onComplete: () => void })
       exit={{ opacity: 0, scale: 1.1, filter: "blur(10px)" }}
       transition={{ duration: 0.8, ease: "easeInOut" }}
     >
-      <div className="absolute inset-0 w-full h-full flex items-center justify-center">
+      <div className="absolute inset-0 w-full h-[100dvh] flex items-center justify-center">
         {/* 
           This video tag will play the actual video file you uploaded.
           Please upload your video file to the 'public' folder and name it 'loading-animation.mp4'.
@@ -25,7 +25,7 @@ export default function SplashScreen({ onComplete }: { onComplete: () => void })
           autoPlay 
           muted 
           playsInline
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover md:object-contain lg:object-cover"
           src="/loading-animation.mp4"
         />
       </div>
